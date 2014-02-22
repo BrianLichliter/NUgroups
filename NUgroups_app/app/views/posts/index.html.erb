@@ -1,37 +1,24 @@
-<h1>Listing posts</h1>
+<h1>Group Hub</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Expiration</th>
-      <th>Email</th>
-      <th>Category</th>
-      <th>Tags</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.description %></td>
-        <td><%= post.expiration %></td>
-        <td><%= post.email %></td>
-        <td><%= post.category %></td>
-        <td><%= post.tags %></td>
-        <td><button type="button" class="btn btn-danger"><%= link_to 'Show', post %></button></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% @posts.each do |post| %>
+<div class = "row">
+  <div class = "col-md-3">
+    <h1><%= post.title %></h1>
+  </div>
+</div>
+<div class = "row">
+  <div class = "col-md-10">
+    <p><%= post.description %></p>
+  </div>
+</div>
+<div class = "row">
+  <div class = "col-md-offset-10 col-md-2">
+    <%= link_to 'Show', post, :class => "btn btn-danger" %>
+  </div>
+</div>
+<% end %>
 
 <br>
-
-<%= link_to 'New Post', new_post_path %>
+<br>
+<br><br><br><br><br><br><br><br>
+<%= link_to 'New Post', new_post_path, :class => "btn btn-danger" %>
