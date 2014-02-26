@@ -7,8 +7,9 @@ class CreatePosts < ActiveRecord::Migration
       t.string :email
       t.string :category
       t.string :tags
-
+      t.integer :user_id
       t.timestamps
     end
+    add_index :posts, [:user_id, :created_at]
   end
 end

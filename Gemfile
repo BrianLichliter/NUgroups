@@ -10,6 +10,10 @@ group :development do
 	gem 'sqlite3'
 end
 
+# gem 'validates_date_time'
+
+gem 'validates_timeliness'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
