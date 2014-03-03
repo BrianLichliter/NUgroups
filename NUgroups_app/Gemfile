@@ -1,12 +1,23 @@
 source 'https://rubygems.org'
 
+gem 'pry-rails'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
 gem 'bootstrap-sass'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+group :development do
+	gem 'sqlite3'
+end
+
+gem 'figaro'
+gem 'omniauth'
+gem 'omniauth-facebook'
+# gem 'validates_date_time'
+
+gem 'validates_timeliness'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
