@@ -1,5 +1,12 @@
 <h1>Group Hub</h1>
 
+<h2><%= current_user ? "LOGGED IN" : "NOT LOGGED IN"  %>
+<br>
+<a href="/auth/facebook"><button class="btn btn-primary">LOGIN/SIGNUP</button></a>
+<% if current_user %>
+	<%= link_to "LOGOUT", signout_path, class: "btn btn-primary" %>
+<% end %>
+
 <% @posts.each do |post| %>
 <div class = "fluid-container posting">
 	<div class = "posting-inner">
@@ -15,7 +22,7 @@
 		</div>
 		<div class = "row">
 		  <div class = "col-md-offset-10 col-md-2">
-		    <%= button_to 'Show', post, :class => "btn btn-default", :type => "button", :method => :get  %>
+		    <%= link_to 'Show', post, :class => "btn btn-default", :type => "button", :method => :get  %>
 		  </div>
 		</div>
 	</div>
@@ -23,5 +30,7 @@
 <br><br>
 <% end %>
 
-<br><br><br>
-<%= button_to 'New Post', new_post_path, :class => "btn btn-primary", :type => "button", :method => :get  %>
+<% if current_user %>
+	<br><br><br>
+	<%= link_to 'New Post', new_post_path, :class => "btn btn-primary", :type => "button", :method => :get  %>
+<% end %>

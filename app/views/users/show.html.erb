@@ -2,7 +2,12 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @user.name %>
+  <%= @user.first_name %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.last_name %>
 </p>
 
 <p>
@@ -10,5 +15,12 @@
   <%= @user.email %>
 </p>
 
+<% @user.posts.each do |post| %>
+
+<h1><%=post.title%></h1>
+<p><%=post.description%></p>
+
+<% end %>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Back', users_path %> 

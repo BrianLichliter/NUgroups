@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'pry-rails'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
@@ -10,6 +12,9 @@ group :development do
 	gem 'sqlite3'
 end
 
+gem 'figaro'
+gem 'omniauth'
+gem 'omniauth-facebook'
 # gem 'validates_date_time'
 
 gem 'validates_timeliness'
