@@ -17,7 +17,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">NUgroups</a>
+        <a class="navbar-brand" href="/">NUgroups</a>
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
@@ -25,6 +25,12 @@
           <li><a href="/posts">Group Hub</a></li>
         </ul>
         <ui class="nav navbar-nav navbar-right">
+          <% if current_user %>
+            <li><%= link_to "Logout", signout_path %></li>
+          <% end %>
+          <% if !current_user %>
+            <li><a href="/auth/facebook">Login</a></li>
+          <% end %>
           <li><a href="#">About us</a></li>
         </ui>
       </div><!--/.nav-collapse -->
