@@ -12,6 +12,8 @@ group :development do
 	gem 'sqlite3'
 end
 
+
+gem 'email_validator'
 gem 'figaro'
 gem 'omniauth'
 gem 'omniauth-facebook'
