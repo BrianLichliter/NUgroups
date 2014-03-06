@@ -12,3 +12,58 @@
 .posting-inner {
 	margin-left: 25px;
 }
+
+.centered-text {
+    text-align:center
+} 
+
+.tcy {
+	
+/*border: 1px solid green ;*/
+
+border: 1px solid #000000;
+background-color: #ffffff;
+overflow: auto;
+margin-bottom: 1.7em;
+margin-right: 4em;
+padding: 1em!important;
+
+}
+
+
+.row {
+margin-right: -15px;
+margin-left: -15px;
+}
+
+.col-md-1 {
+width: 33%;
+}
+
+
+.col-md-4 {
+width: 66%;
+}
+
+
+table.table {
+clear: both;
+margin-bottom: 6px !important;
+max-width: none !important;
+}
+
+
+
+.spacer {
+    margin-top: 10px; /* define margin as you see fit */
+}
+
+.spacer2 {
+    margin-top: 40px; /* define margin as you see fit */
+}
+
+
+.even_gradeA
+{
+	background-color:white;
+}

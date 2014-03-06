@@ -1,35 +1,74 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @post.description %>
-</p>
-
-<p>
-  <strong>Expiration:</strong>
-  <%= @post.expiration %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @post.email %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @post.category %>
-</p>
-
-<p>
-  <strong>Tags:</strong>
-  <%= @post.tags %>
-</p>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %> |
-<%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <div class="container">
+      <div class = "row">
+        <div class="col-md-1">
+          <div class="tcy spacer2">
+            <div class="col-md-12 centered-text">
+              <h2><%= @post.title %></h2>
+            </div>
+          </div>
+        <%= link_to '<button type = "button" class = "btn btn-info">Edit</button>'.html_safe, edit_post_path(@post) %> |
+        <%= link_to '<button type = "button" class = "btn btn-primary">Back</button>'.html_safe, posts_path %> |
+        <%= link_to '<button type = "button" class = "btn btn-danger">Destroy</button>'.html_safe, @post, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      <div class="col-md-4">
+        <div class = "table-responsive">
+          <table class="table table-hover table-striped">
+            <tbody>
+              <div class = "row">
+                <tr class="even_gradeA">
+                  <td>
+                    <strong>Description:</strong>
+                  </td>
+                  <td>
+                    <%= @post.description %>
+                  </td>
+                </tr>
+              </div>  
+              <div class = "row spacer">
+                <tr class= "even_gradeA">
+                  <td>
+                    <strong>Expiration:</strong>
+                  </td>
+                  <td>
+                    <%= @post.expiration %>
+                  </td>
+                </tr>
+              </div>
+              <div class = "row spacer">
+                <tr class="even_gradeA">
+                  <td>
+                    <strong>Email:</strong>
+                  </td>
+                  <td>
+                    <%= @post.email %>
+                  </td>
+                </tr>
+              </div>
+              <div class="row spacer">
+                <tr class="even_gradeA">
+                  <td>
+                    <strong>Category:</strong>
+                  </td>
+                  <td>
+                    <%= @post.category %>
+                  </td>
+                </div>
+                <div class = "row spacer">
+                  <tr class="even_gradeA">
+                    <td>
+                      <strong>Tags:</strong>
+                    </td>
+                    <td>
+                      <%= @post.tags %>
+                    </td>
+                  </tr>
+                </div>  
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
