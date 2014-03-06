@@ -1,26 +1,85 @@
+<style>
+h2, h3, h4 {
+ 	font-family:'Ruluko';
+ }
+
+ #info {
+ 	position: static;
+ }
+ </style>
+
+<div class = "container">
+	<div class = "row">
+		<div class = "col-md-10">
+			<legend><h1>Profile</h1></legend>
+		</div>
+	</div>
+	<div class = "container" id = "info">
+		<div class = "row">
+			<div class = "col-md-6">
+				<h2 class="text-primary"><%= @user.first_name %> <%= @user.last_name %></h2>
+			</div>
+		</div> 
+		<div class = "fluid-container">
+			<div class = "row">
+				<div class = "col-md-6">
+					<div class="panel panel-info">
+					  	<div class="panel-heading">
+							<h3 class="text-info panel-title">
+								<b>
+									E-MAIL:
+								</b>
+							</h3>
+					  	</div>
+					  	<div class="panel-body">
+							<h3 class="text-primary"><%= @user.email %></h3>
+					  	</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	<div class = "container" id = "posts">
+		<div class = "row">
+			<div class = "col-md-6">
+				<h3 class = "text-primary">YOUR POSTS:</h3>
+			</div>
+		</div>
+		<div class = "container">
+			<% @user.posts.each do |post| %>
+			<div class = "row posting-inner">
+				<div class = "col-md-6 posting">
+					<br>
+					<div class = "row ">
+						<div class = "col-md-12">
+							<h1><%= post.title %></h1>
+						</div>
+					</div>
+					<div class = "row">
+						<div class = "col-md-12">
+							<b><p>Contact: <%= post.email %></p></b>
+						</div>
+					</div>
+					<div class = "row">
+						<div class = "col-md-10">
+							<i><p>About:</p></i>
+							<p><%= post.description %></p>
+						</div>
+					</div>
+					<div class = "row">
+						<div class = "col-md-offset-10 col-md-2">
+							<%= link_to 'Show', post, :class => "btn btn-default", :type => "button", :method => :get  %>
+						</div>
+						<br><br><br>
+					</div>
+				</div>
+			</div>
+			<br><br>
+			<% end %>
+		</div>
+	</div>
+</div> 
+
+
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @user.first_name %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @user.last_name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<% @user.posts.each do |post| %>
-
-<h1><%=post.title%></h1>
-<p><%=post.description%></p>
-
-<% end %>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %> 
